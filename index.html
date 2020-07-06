@@ -1,0 +1,124 @@
+<!-- Created by Pasich-->
+<!-- Beta 1.1 06.07.2020-->
+<!DOCTYPE HTML><html lang="ru">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+<link href="/src/style.css" rel="stylesheet"> <script src="/src/js.js" ></script> 
+<title> Pasich </title></head><body><div class="container">
+
+<!-- Закрепим верхнюю панель-->
+<div class="head">
+<a class="bt" href="#"><img src="/img/settings.svg"></a>   
+<a href="#" onclick="openModal('contact')"><img src="/img/info.svg"></a>
+<spav id="time"></spav></div>
+<div id="load" class="loading"></div> 
+ 
+ <!-- Приветствие-->
+<dev id="helo" style="display:block;">
+<div class="con drop"><div class="texta">
+<div class="hello">Приветствую вас!</div>
+<ul><li>Здесь вы можете найти несколько полезных функций.</li>
+<li>Воспользоваться этим шаблоном для создания вашего сайта.</li>
+<li>Шаблон будет обновляться.</li></ul>
+<b>Связь с разработчиком через контакты.</b>
+</div></div></dev>
+ 
+<!-- Авторизация-->
+<dev id="auth" style="display:none;">
+<div class="con drop">
+<div class="tit">Авторизация</div>
+<div class="hh"><form  method="post" action="#">
+<input id="login" type="text" placeholder= "Логин" required><br />
+<input id="password" type="password" placeholder= "Пароль" required><br /></div>
+<center class="link">
+<a id="pass" href="#"> Забыли пароль?</a></center>
+<center></br><button type="submit">Войти</button></form></center></div></dev>
+
+<!-- Регистрация-->
+<dev id="reg" style="display:none;">
+<div class="con drop">
+<div class="tit">Регистрация</div><div class="hh">
+<form onsubmit="return passwordValid()">
+<input id="logins" type="text" placeholder="Логин" class="text"><br />
+<input id="password1" type="password" placeholder="Пароль" class="text"><br />
+<input id="password2" type="password" placeholder="Повторите пароль" class="text"><br />
+<input  type="email" placeholder="Email" class="text"><br />
+<div class="checker" id="checkpassword"></div>    </div><center>
+<button type="submit" class="btn">Регистрация</button>
+</form></center></div></dev>
+
+<!-- Профиль-->
+<dev id="profile" style="display:none;">
+<div class="con drop"><div class="avatar"><img src="/img/ava.jpg"></div>
+<div class="info"><h4>Andrii Pasich</h4>
+<p id="work">Програмист</p> 
+<p id="mess"><button onclick="openModal('msg')"> Написать сообщение</button></p>
+</div>     </div>
+<div class="bio drop"><ul>
+<li>Страна: <b>Ukraine</b></li>
+<li>Возраст: <b>20 years</b></li>
+<li>О себе: <b>Гениальность в минимализме!</b></li>
+<li>PHP:
+</br><progress value="99" max="100"></progress>
+<li>JS:</br><progress value="83" max="100"></progress>
+<li>HTML5:</br><progress value="100" max="100"></progress>
+<li>CSS:</br><progress value="98" max="100"></progress>
+</ul></div></dev>
+
+<!-- Таблица-->
+<dev id="demo" style="display:none;">
+<div class="con drop">
+<div class="table_scroll"><table class="table_class">    
+<tr class="table_head">
+<td>MYSQL</td>
+<td>PHP</td>    
+<td>HTML</td>
+<td>CSS</td>
+<td>PDO</td>
+<td>JS</td>
+<td>BOOTSTRAP</td></tr>
+<tr style="text-align:center">    
+<td class="x"><b>√</b></td>
+<td class="x"><b>√</b></td>
+<td class="x"><b>√</b></td>
+<td class="x"><b>√</b></td>
+<td class="x"><b>√</b></td>
+<td class="x"><b>√</b></td>
+<td class="x"><b>√</b></td>
+</tr></table></div></div></dev>
+
+<!-- Модальніе окна-->
+<div id="msg" class="modal modalUp">
+<div class="modal_top">Отправить сообщение
+<a class="close" onclick="closeModal('msg')">
+<img src="/img/back.svg"></a></div>
+<p><form onsubmit="return textValid('message')">
+<textarea id="message" cols="45" rows="5" required></textarea>
+<div class="checker" id="checkmsg"></div></p>
+<button type="submit" class="msg btn">Отправить</button></form></div>
+
+<div id="contact" class="modal modalUp">
+<div class="modal_top">Контакты <a class="close" onclick="closeModal('contact')">
+<img src="/img/back.svg"></a></div>
+<div class="contact_body"><ul>
+<li>Разработчик: <b>/Andrii Pasichnik</b></li>
+<li>Версия: <b> /Beta 1.1</b></li>
+<li>Связь со мной:</li></ul></div>
+<div class="contact_bottom">
+<a href="https://t.me/andriipasichnik"><img width="34" height="34" src="/img/telegram.png" alt="telgam"></a>
+<a href="https://instagram.com/pasich__"><img width="34" height="34" src="/img/instagram.png" alt="instagram"></a>
+<a href="https://pasichdev.github.io/helloScript/"><img width="34" height="34" src="/img/github.svg" alt="github"></a>
+</div></div>
+
+<!-- Панель навигации-->
+<div class="buttonlist"><div id="blist">
+<button onclick="loading('helo')">Приветствие</button> 
+<button onclick="loading('auth')">Авторизация</button>
+<button onclick="loading('reg')">Регистрация</button>
+<button onclick="loading('profile')">Профиль</button>
+<button onclick="loading('demo')">Таблица</button>
+</div></div>
+ 
+</body></html>
