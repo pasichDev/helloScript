@@ -1,2 +1,3 @@
 # helloScript
-Минимализм, попробуй!
+Минимализм, попробуй!</br>
+https://pasichdev.github.io/helloScript/
